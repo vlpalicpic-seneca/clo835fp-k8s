@@ -1,0 +1,9 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: app-config
+data:
+  BG_IMAGE_URL: "s3://clo835fp-bg/clouds-bg1.jpg"
+  GROUP_NAME: "Team VLP"
+  SLOGAN: "Finish Strong"
+  APP_COLOR: "lime"
