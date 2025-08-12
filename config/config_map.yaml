@@ -4,7 +4,7 @@ metadata:
   name: app-config
   namespace: fp
 data:
-  BG_IMAGE_URL: "s3://clo835fp-bg/bg-image.jpg" 
-  GROUP_NAME: "Team VLP"
-  SLOGAN: "Finish Strong!"
+  BG_IMAGE_URL: "s3://clo835fp-bg/clouds-bg.jpg" 
+  GROUP_NAME: "Team VLP Solo"
+  SLOGAN: "Finish Strong"
   APP_COLOR: "lime"
