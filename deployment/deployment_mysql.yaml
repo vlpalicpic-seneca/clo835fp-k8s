@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: mysql-deployment
+  namespace: fp
 spec:
   replicas: 1
   selector:
@@ -12,6 +13,8 @@ spec:
       labels:
         app: mysql
     spec:
+      serviceAccountName: clo835-sa
+      terminationGracePeriodSeconds: 30
       imagePullSecrets:
         - name: ecrcred
       containers:

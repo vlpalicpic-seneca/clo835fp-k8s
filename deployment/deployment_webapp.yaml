@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: webapp-deployment
+  namespace: fp
 spec:
   replicas: 1
   selector:
@@ -11,7 +12,10 @@ spec:
     metadata:
       labels:
         app: employees
+      annotations:
+        config-update-trigger: "v2"
     spec:
+      serviceAccountName: clo835-sa
       imagePullSecrets:
         - name: ecrcred
       containers:
@@ -21,9 +25,9 @@ spec:
             - containerPort: 81
           envFrom:
             - secretRef:
-                name: app-secrets       
+                name: app-secrets
             - configMapRef:
-                name: app-config         
+                name: app-config
           env:
             - name: DBHOST
               value: "mysql"
